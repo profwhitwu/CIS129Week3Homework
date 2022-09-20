@@ -14,7 +14,8 @@
     // subtract y from x, then return the result.
     public int DifferenceOfTwoNumbers(int x, int y)
     {
-        throw new NotImplementedException();
+         var result = x - y;
+         return result;
     }
 
     
@@ -22,7 +23,8 @@
     // multiply x and y, then return the result
     public int ProductOfTwoNumbers(int x, int y)
     {
-        throw new NotImplementedException();
+        var result = x * y;
+        return result;
     }
     
     // Using the DIVISION OPERATOR,
@@ -30,7 +32,8 @@
     // return null
     public decimal? QuotientOfTwoNumbers(decimal x, decimal y)
     {
-        throw new NotImplementedException();
+        var result = x / y;
+        return result;
     }
 
     // Using the REMAINDER OPERATOR,
@@ -38,7 +41,8 @@
     // zero, return null
     public int? DividendOfTwoNumbers(int x, int y)
     {
-        throw new NotImplementedException();
+         var result = x % y;
+         return result;
     }
 
     // Using the GREATER THAN OPERATOR,
@@ -46,7 +50,7 @@
     // Otherwise, return false
     public bool IsXGreaterThanY(int x, int y)
     {
-        throw new NotImplementedException();
+         return x > y;
     }
 
     // Using the LESS THAN OPERATOR,
@@ -54,7 +58,7 @@
     // Otherwise, return false
     public bool IsXLessThanY(int x, int y)
     {
-        throw new NotImplementedException();
+        return x < y;
     }
 
     // Using the GREATER THAN OR EQUAL TO OPERATOR
@@ -62,7 +66,7 @@
     // If so, return true. Otherwise, return false
     public bool IsXGreaterThanOrEqualToY(int x, int y)
     {
-        throw new NotImplementedException();
+        return x >= y;
     }
 
     // Using the LESS THAN OR EQUAL TO OPERATOR,
@@ -70,7 +74,7 @@
     // If so, return true. Otherwise, return false
     public bool IsXLessThanOrEqualToY(int x, int y)
     {
-        throw new NotImplementedException();
+        return x <= y;
     }
 
     // Using the EQUALITY OPERATOR,
@@ -78,7 +82,7 @@
     // return true.  Otherwise return false.
     public bool AreXAndYEqual(int x, int y)
     {
-        throw new NotImplementedException();
+        return x == y;
     }
 
     // Check if x or y are greater than 0.
@@ -87,7 +91,7 @@
     // and GREATER THAN OPERATORS to do so.
     public bool IsXOrYGreaterThanZero(int x, int y)
     {
-        throw new NotImplementedException();
+        return x > 0 || y > 0;
     }
 
     // Check if x and y are greater than 0.
@@ -96,7 +100,7 @@
     // along with the GREATER THAN OPERATORS to do so.
     public bool AreXAndYGreaterThanZero(int x, int y)
     {
-        throw new NotImplementedException();
+        return x > 0 && y > 0;
     }
 
     // using an INEQUALITY OPERATOR, check if x
@@ -104,7 +108,7 @@
     // Otherwise, return false.
     public bool IsXNotEqualToY(int x, int y)
     {
-        throw new NotImplementedException();
+         return x != y;
     }
 
     // Referencing the CustomerType enum below, check that
@@ -128,7 +132,16 @@
 
     public decimal? ReturnCustomerTypeDiscountRate(CustomerType customerType)
     {
-        throw new NotImplementedException();
+        if(customerType == CustomerType.Student)
+        return 10.0;
+    else if(customerType == CustomerType.Senior)
+        return 15.0;
+    else if(customerType == CustomerType.Military)
+        return 20.0;
+    else if(customerType == CustomerType.Child)
+        return 100.0;
+    else if(customerType == CustomerType.Adult)
+        return 0.0;
     }
 
     
@@ -137,7 +150,30 @@
     // use of at least one default statement.  
     public decimal? ReturnCustomerTypeDiscountRateSwitch(CustomerType customerType)
     {
-        throw new NotImplementedException();
+        double discount = null;
+    switch(customerType) 
+    {
+        case Student:
+            discount = 10.0;
+            break;
+        case Senior:
+            discount = 15.0;
+            break;
+        case Military:
+            discount = 20.0;
+            break;
+        case Child:
+            discount = 100.0;
+            break;
+        case Adult:
+            discount = 0.0;
+            break;
+        default:
+            System.out.println("Invalid customer type.");
+    }
+    return discount;
+}
+
     }
 
     public enum CustomerType
